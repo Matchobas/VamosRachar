@@ -14,13 +14,16 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
 
     EditText price;
     EditText peopleNumber;
     TextView result;
+
+    String sendText = "R$ 0,00";
 
     ImageButton shareButton;
 
@@ -56,11 +59,12 @@ public class MainActivity extends AppCompatActivity {
 
                 String n2Str = peopleNumber.getText().toString();
 
-                if(n1Str != null && n1Str.trim().length() > 0 && n2Str != null && n2Str.trim().length() > 0) {
+                if (n1Str != null && n1Str.trim().length() > 0 && n2Str != null && n2Str.trim().length() > 0) {
                     double peopleNumberD = Double.parseDouble(n2Str);
                     double priceNumber = Double.parseDouble(n1Str);
+                    DecimalFormat df = new DecimalFormat("#.00");
 
-                    String sendText = "R$ " + (priceNumber / peopleNumberD);
+                    sendText = "R$ " + df.format(priceNumber / peopleNumberD);
                     result.setText(sendText);
                 } else {
                     String defaultText = "R$ 0,00";
@@ -86,11 +90,12 @@ public class MainActivity extends AppCompatActivity {
 
                 String n2Str = peopleNumber.getText().toString();
 
-                if(n1Str != null && n1Str.trim().length() > 0 && n2Str != null && n2Str.trim().length() > 0) {
+                if (n1Str != null && n1Str.trim().length() > 0 && n2Str != null && n2Str.trim().length() > 0) {
                     double peopleNumberD = Double.parseDouble(n2Str);
                     double priceNumber = Double.parseDouble(n1Str);
+                    DecimalFormat df = new DecimalFormat("#.00");
 
-                    String sendText = "R$ " + (priceNumber / peopleNumberD);
+                    sendText = "R$ " + df.format(priceNumber / peopleNumberD);
                     result.setText(sendText);
                 } else {
                     String defaultText = "R$ 0,00";
@@ -99,24 +104,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if(status != TextToSpeech.ERROR) {
-                    tts.setLanguage(Locale.getDefault());
-                }
-            }
-        });
+        // Text to Speech checagem para inicializar TTS
+        Intent checkTTSIntent = new Intent();
+        checkTTSIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
+        startActivityForResult(checkTTSIntent, 1122);
 
         ttsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String text = result.getText().toString();
-                Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
-                tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+                if(tts != null) {
+                    String speakText = "O valor que deve ser pago por cada pessoa é de "
+                            + sendText.replaceAll("[R$]","").trim()
+                            + " reais";
+                    tts.speak(speakText, TextToSpeech.QUEUE_FLUSH, null);
+                }
             }
         });
 
+        // Ação do botão de compartilhamento
         shareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,16 +129,33 @@ public class MainActivity extends AppCompatActivity {
                 i.setType("text/plain");
                 String shareStr = result.getText().toString();
                 i.putExtra(Intent.EXTRA_TEXT, shareStr);
-                startActivity(i);
+                Intent openInChooser = Intent.createChooser(i, "Compartilhar");
+                startActivity(openInChooser);
             }
         });
     }
 
-    public void onPause(){
-        if(tts != null) {
-            tts.stop();
-            tts.shutdown();
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1122) {
+            if(resultCode == TextToSpeech.Engine.CHECK_VOICE_DATA_PASS) {
+                tts = new TextToSpeech(this, this);
+            } else {
+                Intent installTTSIntent = new Intent();
+                installTTSIntent.setAction(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
+                startActivity(installTTSIntent);
+            }
         }
-        super.onPause();
+    }
+
+    @Override
+    public void onInit(int status) {
+        // Checar a inicialização do TTS
+        if(status == TextToSpeech.SUCCESS) {
+            Toast.makeText(this, "TTS Ativado", Toast.LENGTH_LONG).show();
+        } else if (status == TextToSpeech.ERROR) {
+            Toast.makeText(this, "TSS não foi habilitado com sucesso", Toast.LENGTH_LONG).show();
+        }
     }
 }
