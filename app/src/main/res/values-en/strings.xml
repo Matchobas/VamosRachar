@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Let\'s Split</string>
+    <string name="vamos_rachar">Let\'s Split!</string>
+    <string name="r">$</string>
+    <string name="n_mero_pessoas">How many people</string>
+    <string name="r_0_00">$ 0,00</string>
+    <string name="valor_total">Bill value</string>
+    <string name="todo">TODO</string>
+    <string name="bot_o_para_compartilhar_resultado">Button to share the result</string>
+    <string name="escrever_no_campo_a_esquerda_o_n_mero_de_pessoas">Write the number of people to split the value</string>
+    <string name="bot_o_para_falar_o_resultado_em_voz_alta">Button say the result out loud</string>
+</resources>

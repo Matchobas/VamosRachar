@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Vamos Rachar</string>
+    <string name="vamos_rachar">Vamos Rachar!</string>
+    <string name="r">R$</string>
+    <string name="n_mero_pessoas">Número pessoas</string>
+    <string name="r_0_00">R$ 0,00</string>
+    <string name="valor_total">Valor total</string>
+    <string name="todo">TODO</string>
+    <string name="bot_o_para_compartilhar_resultado">Botão para compartilhar resultado</string>
+    <string name="escrever_no_campo_a_esquerda_o_n_mero_de_pessoas">Escrever no campo a esquerda o número de pessoas</string>
+    <string name="bot_o_para_falar_o_resultado_em_voz_alta">Botão para falar o resultado em voz alta</string>
 </resources>
