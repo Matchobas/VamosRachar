@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#673AB7"
@@ -12,150 +13,143 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="229dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40sp"
+        android:layout_height="140dp"
         android:fontFamily="sans-serif"
-        android:gravity="center_horizontal"
+        android:gravity="clip_horizontal|center|clip_vertical|center_horizontal"
         android:text="@string/vamos_rachar"
         android:textColor="#FFFFFF"
         android:textSize="56sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.186" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="top"
-        android:orientation="horizontal">
+        android:layout_weight="1"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal"
+        android:text="@string/r_0_00"
+        android:textColor="#FFFFFF"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.686" />
 
-        <TextView
-            android:id="@+id/valueField"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16sp"
-            android:layout_marginLeft="16sp"
-            android:layout_marginEnd="3sp"
-            android:layout_marginRight="3sp"
-            android:layout_weight="1"
-            android:fontFamily="sans-serif"
-            android:gravity="center_horizontal"
-            android:text="@string/r"
-            android:textColor="#FFFFFF"
-            android:textSize="42sp" />
+    <ImageView
+        android:id="@+id/valueField"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:contentDescription="@string/colocar_esquerda_desse_campo_o_valor_total_da_conta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.438"
+        app:srcCompat="@drawable/money" />
 
-        <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="211dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="30sp"
-            android:layout_weight="1"
-            android:autofillHints=""
-            android:backgroundTint="#FFFFFF"
-            android:ems="10"
-            android:fontFamily="sans-serif"
-            android:hint="@string/valor_total"
-            android:inputType="number|numberDecimal"
-            android:numeric="decimal"
-            android:shadowColor="#FFFFFF"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#B2FFFFFF"
-            android:textSize="30sp"
-            android:layout_marginEnd="30sp" />
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/peopleNumberField"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:contentDescription="@string/escrever_no_campo_a_esquerda_o_n_mero_de_pessoas"
+        android:gravity="end"
+        android:rotationX="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.546"
+        app:srcCompat="@drawable/people" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_weight="1"
+        android:autofillHints=""
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:hint="@string/n_mero_pessoas"
+        android:inputType="number|numberDecimal"
+        android:shadowColor="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#B2FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/peopleNumberField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.672"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
-            android:id="@+id/peopleNumberField"
-            android:layout_width="53dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="16sp"
-            android:layout_marginLeft="16sp"
-            android:layout_marginRight="8sp"
-            android:layout_weight="1"
-            android:contentDescription="@string/escrever_no_campo_a_esquerda_o_n_mero_de_pessoas"
-            android:gravity="end"
-            android:rotationX="0"
-            app:srcCompat="@drawable/people" />
-
-        <EditText
-            android:id="@+id/editTextTextPersonName3"
-            android:layout_width="211dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="30sp"
-            android:layout_weight="1"
-            android:autofillHints=""
-            android:backgroundTint="#FFFFFF"
-            android:ems="10"
-            android:fontFamily="sans-serif"
-            android:hint="@string/n_mero_pessoas"
-            android:inputType="number|numberDecimal"
-            android:shadowColor="#FFFFFF"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#B2FFFFFF"
-            android:textSize="30sp"
-            android:layout_marginEnd="30sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_weight="1"
+        android:autofillHints=""
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:hint="@string/valor_total"
+        android:inputType="number|numberDecimal"
+        android:numeric="decimal"
+        android:shadowColor="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#B2FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/valueField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.672"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/result"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24sp"
-            android:layout_weight="1"
-            android:fontFamily="sans-serif"
-            android:gravity="center_horizontal"
-            android:text="@string/r_0_00"
-            android:textColor="#FFFFFF"
-            android:textSize="60sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="54sp"
+        android:layout_height="54sp"
+        android:layout_marginStart="101dp"
+        android:layout_marginLeft="101dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_weight="1"
+        android:background="@drawable/round_shape_button"
+        android:contentDescription="@string/bot_o_para_falar_o_resultado_em_voz_alta"
+        android:src="@android:drawable/ic_lock_silent_mode_off"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintTop_toBottomOf="@+id/result"
+        tools:visibility="visible" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="54sp"
+        android:layout_height="54dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="32dp"
+        android:layout_weight="1"
+        android:background="@drawable/round_shape_button"
+        android:contentDescription="@string/bot_o_para_compartilhar_resultado"
+        android:src="@android:drawable/ic_menu_share"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result"
+        tools:visibility="visible" />
 
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="54sp"
-            android:layout_height="54sp"
-            android:layout_marginStart="100dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="35dp"
-            android:layout_weight="1"
-            android:background="@drawable/round_shape_button"
-            android:contentDescription="@string/bot_o_para_compartilhar_resultado"
-            android:src="@android:drawable/ic_menu_share"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:visibility="visible" />
-
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="54sp"
-            android:layout_height="54sp"
-            android:layout_marginTop="35dp"
-            android:layout_marginEnd="100dp"
-            android:layout_marginRight="100dp"
-            android:layout_weight="1"
-            android:background="@drawable/round_shape_button"
-            android:contentDescription="@string/bot_o_para_falar_o_resultado_em_voz_alta"
-            android:src="@android:drawable/ic_lock_silent_mode_off"
-            android:visibility="visible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:visibility="visible" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

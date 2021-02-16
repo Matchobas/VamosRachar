@@ -9,4 +9,6 @@
     <string name="bot_o_para_compartilhar_resultado">Botão para compartilhar resultado</string>
     <string name="escrever_no_campo_a_esquerda_o_n_mero_de_pessoas">Escrever no campo a esquerda o número de pessoas</string>
     <string name="bot_o_para_falar_o_resultado_em_voz_alta">Botão para falar o resultado em voz alta</string>
+    <string name="n_mero_de_pessoas">Número de pessoas</string>
+    <string name="colocar_esquerda_desse_campo_o_valor_total_da_conta">Colocar à esquerda desse campo o valor total da conta</string>
 </resources>
