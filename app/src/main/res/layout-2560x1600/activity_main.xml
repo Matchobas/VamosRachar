@@ -12,19 +12,20 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="229dp"
-        android:layout_height="140dp"
+        android:layout_width="373dp"
+        android:layout_height="252dp"
         android:fontFamily="sans-serif"
         android:gravity="clip_horizontal|center|clip_vertical|center_horizontal"
         android:text="@string/vamos_rachar"
         android:textColor="#FFFFFF"
-        android:textSize="56sp"
+        android:textSize="100sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.186" />
+        app:layout_constraintVertical_bias="0.156" />
 
     <TextView
         android:id="@+id/result"
@@ -35,19 +36,19 @@
         android:gravity="center_horizontal"
         android:text="@string/r_0_00"
         android:textColor="#FFFFFF"
-        android:textSize="60sp"
+        android:textSize="110sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.686" />
+        app:layout_constraintVertical_bias="0.704" />
 
     <ImageView
         android:id="@+id/valueField"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:contentDescription="@string/colocar_esquerda_desse_campo_o_valor_total_da_conta"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,8 +60,8 @@
 
     <ImageView
         android:id="@+id/peopleNumberField"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_weight="1"
         android:contentDescription="@string/escrever_no_campo_a_esquerda_o_n_mero_de_pessoas"
         android:gravity="end"
@@ -75,7 +76,7 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
-        android:layout_width="240dp"
+        android:layout_width="500dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:autofillHints=""
@@ -87,15 +88,15 @@
         android:shadowColor="#FFFFFF"
         android:textColor="#FFFFFF"
         android:textColorHint="#B2FFFFFF"
-        android:textSize="30sp"
+        android:textSize="56sp"
         app:layout_constraintBottom_toBottomOf="@+id/peopleNumberField"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.672"
+        app:layout_constraintHorizontal_bias="0.78"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
-        android:layout_width="240dp"
+        android:layout_width="500dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:autofillHints=""
@@ -108,16 +109,16 @@
         android:shadowColor="#FFFFFF"
         android:textColor="#FFFFFF"
         android:textColorHint="#B2FFFFFF"
-        android:textSize="30sp"
+        android:textSize="56sp"
         app:layout_constraintBottom_toBottomOf="@+id/valueField"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.672"
+        app:layout_constraintHorizontal_bias="0.78"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton2"
-        android:layout_width="54sp"
-        android:layout_height="54sp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="101dp"
         android:layout_marginLeft="101dp"
         android:layout_marginTop="32dp"
@@ -126,7 +127,7 @@
         android:layout_weight="1"
         android:background="@drawable/round_shape_button"
         android:contentDescription="@string/bot_o_para_falar_o_resultado_em_voz_alta"
-        android:src="@drawable/speak2"
+        android:src="@drawable/speak"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -136,15 +137,15 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="54sp"
-        android:layout_height="54dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="32dp"
         android:layout_weight="1"
         android:background="@drawable/round_shape_button"
         android:contentDescription="@string/bot_o_para_compartilhar_resultado"
-        android:src="@drawable/share2"
+        android:src="@drawable/share"
         android:visibility="visible"
         app:layout_constraintEnd_toStartOf="@+id/imageButton2"
         app:layout_constraintHorizontal_bias="0.5"

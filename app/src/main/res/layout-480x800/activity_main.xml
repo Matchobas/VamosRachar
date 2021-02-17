@@ -18,13 +18,14 @@
         android:gravity="clip_horizontal|center|clip_vertical|center_horizontal"
         android:text="@string/vamos_rachar"
         android:textColor="#FFFFFF"
-        android:textSize="56sp"
+        android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.186" />
+        app:layout_constraintVertical_bias="0.083" />
 
     <TextView
         android:id="@+id/result"
@@ -35,68 +36,51 @@
         android:gravity="center_horizontal"
         android:text="@string/r_0_00"
         android:textColor="#FFFFFF"
-        android:textSize="60sp"
+        android:textSize="52sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.686" />
+        app:layout_constraintVertical_bias="0.712" />
 
     <ImageView
         android:id="@+id/valueField"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:contentDescription="@string/colocar_esquerda_desse_campo_o_valor_total_da_conta"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.438"
         app:srcCompat="@drawable/money" />
-
-    <ImageView
-        android:id="@+id/peopleNumberField"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_weight="1"
-        android:contentDescription="@string/escrever_no_campo_a_esquerda_o_n_mero_de_pessoas"
-        android:gravity="end"
-        android:rotationX="0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.546"
-        app:srcCompat="@drawable/people" />
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
-        android:layout_width="240dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:autofillHints=""
         android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:fontFamily="sans-serif"
-        android:hint="@string/n_mero_pessoas"
+        android:hint="Pessoas"
         android:inputType="number|numberDecimal"
         android:shadowColor="#FFFFFF"
         android:textColor="#FFFFFF"
         android:textColorHint="#B2FFFFFF"
-        android:textSize="30sp"
+        android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="@+id/peopleNumberField"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.672"
+        app:layout_constraintHorizontal_bias="0.775"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
-        android:layout_width="240dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:layout_weight="1"
         android:autofillHints=""
         android:backgroundTint="#FFFFFF"
@@ -108,11 +92,26 @@
         android:shadowColor="#FFFFFF"
         android:textColor="#FFFFFF"
         android:textColorHint="#B2FFFFFF"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/valueField"
+        android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.672"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.775"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageView
+        android:id="@+id/peopleNumberField"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="21dp"
+        android:layout_weight="1"
+        android:contentDescription="@string/escrever_no_campo_a_esquerda_o_n_mero_de_pessoas"
+        android:gravity="end"
+        android:rotationX="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/valueField"
+        app:srcCompat="@drawable/people" />
 
     <ImageButton
         android:id="@+id/imageButton2"
@@ -120,7 +119,7 @@
         android:layout_height="54sp"
         android:layout_marginStart="101dp"
         android:layout_marginLeft="101dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
         android:layout_weight="1"
@@ -140,7 +139,7 @@
         android:layout_height="54dp"
         android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:layout_weight="1"
         android:background="@drawable/round_shape_button"
         android:contentDescription="@string/bot_o_para_compartilhar_resultado"
